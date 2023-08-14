@@ -1,0 +1,43 @@
+﻿@model List<StoredProcedureCrud.DatabaseConnection.GetEmpl_Result>
+
+
+
+@{
+    ViewBag.Title = "GetAllEmployees";
+}
+
+<h2>Employees_Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+        <th>EmpAddress</th>
+        <th>EmpCompany</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+            <td>@item.EmpDepartment</td>
+            <td>@item.EmpCompany</td>
+            <td><a href="@Url.Action("Edit","Employee",new {item.Id})">Edit</a></td>
+            <td><a href="@Url.Action("Delete","Employee", new {item.Id})">Delete</a></td>
+
+
+
+
+        </tr>
+    }
+
+
+
+</table>
+
+

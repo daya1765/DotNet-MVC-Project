@@ -1,0 +1,71 @@
+﻿@model StoredProcedureCrud.DatabaseConnection.Emplo
+
+@{
+    ViewBag.Title = "AddEmp";
+}
+
+<h2>AddEmp</h2>
+
+@using (Html.BeginForm("AddEmp", "Employee", FormMethod.Post))
+{
+   
+
+    <div class=" mb-3">
+        <label class=" form-label">Id</label>
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @placeholder = "EmpId", data_rule_required = "true" })
+        @Html.ValidationMessageFor(m => m.Id, "", new { @class = "text-danger" })
+
+
+
+    </div>
+
+    <div class=" mb-3">
+        <label class=" form-label">Name</label>
+        @Html.TextBoxFor(m => m.EmpName, new { @class = "form-control", @placeholder = "EmpName", data_rule_required = "true" })
+        @Html.ValidationMessageFor(m => m.EmpName, "", new { @class = "text-danger" })
+
+
+
+    </div>
+
+
+
+    <div class=" mb-3">
+        <label class=" form-label">Company</label>
+        @Html.TextBoxFor(m => m.EmpCompany, new { @class = "form-control", @placeholder = "EmpCompany", data_rule_required = "true" })
+        @Html.ValidationMessageFor(m => m.EmpCompany, "", new { @class = "text-danger" })
+
+
+    </div>
+
+    <div class=" mb-3">
+        <label class=" form-label">Department</label>
+        @Html.TextBoxFor(m => m.EmpDepartment, new { @class = "form-control", @placeholder = "EmpDepartment", data_rule_required = "true" })
+        @Html.ValidationMessageFor(m => m.EmpDepartment, "", new { @class = "text-danger" })
+
+
+    </div>
+
+    <div class=" mb-3">
+        <label class=" form-label">Salary</label>
+        @Html.TextBoxFor(m => m.EmpSalary, new { @class = "form-control", @placeholder = "EmpSalary", data_rule_required = "true" })
+        @Html.ValidationMessageFor(m => m.EmpSalary, "", new { @class = "text-danger" })
+
+
+    </div>
+
+    <button class=" btn btn-warning" type="submit">Save</button>
+    <button class="btn btn-success" type="reset">Reset</button>
+
+}
+
+
+
+
+
+
+
+
+
+
+

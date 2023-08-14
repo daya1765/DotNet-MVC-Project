@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dotnetdb5ModelStoreContainer" CdmEntityContainer="dotnetdb5Entities">
+    <EntitySetMapping Name="Emploes">
+      <EntityTypeMapping TypeName="dotnetdb5Model.Emplo">
+        <MappingFragment StoreEntitySet="Emplo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpCompany" ColumnName="EmpCompany" />
+          <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />
+          <ScalarProperty Name="EmpDepartment" ColumnName="EmpDepartment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteEmploy" FunctionName="dotnetdb5Model.Store.DeleteEmploy" />
+    <FunctionImportMapping FunctionImportName="GetEmpl" FunctionName="dotnetdb5Model.Store.GetEmpl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dotnetdb5Model.GetEmpl_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpCompany" ColumnName="EmpCompany" />
+          <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />
+          <ScalarProperty Name="EmpDepartment" ColumnName="EmpDepartment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertEmploy" FunctionName="dotnetdb5Model.Store.InsertEmploy" />
+    <FunctionImportMapping FunctionImportName="UpdateEmploy" FunctionName="dotnetdb5Model.Store.UpdateEmploy" />
+  </EntityContainerMapping>
+</Mapping>

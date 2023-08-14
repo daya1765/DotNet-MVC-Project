@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dotnetdb4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Emplo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpCompany" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpSalary" Type="Int32" Nullable="false" />
+    <Property Name="EmpDepartment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="dotnetdb4Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emploes" EntityType="Self.Emplo" />
+    <FunctionImport Name="DeleteEmploy">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmpl" ReturnType="Collection(dotnetdb4Model.GetEmpl_Result)" />
+    <FunctionImport Name="InsertEmploy">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmpName" Mode="In" Type="String" />
+      <Parameter Name="EmpCompany" Mode="In" Type="String" />
+      <Parameter Name="EmpSalary" Mode="In" Type="String" />
+      <Parameter Name="EmpDepartment" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmploy">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="EmpName" Mode="In" Type="String" />
+      <Parameter Name="EmpCompany" Mode="In" Type="String" />
+      <Parameter Name="EmpSalary" Mode="In" Type="String" />
+      <Parameter Name="EmpDepartment" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetEmpl_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="EmpCompany" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="EmpSalary" Nullable="false" />
+    <Property Type="String" Name="EmpDepartment" Nullable="false" MaxLength="30" />
+  </ComplexType>
+</Schema>
